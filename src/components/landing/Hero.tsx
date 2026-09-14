@@ -9,17 +9,10 @@ interface HeroProps {
 export function Hero({ onCreateMate }: HeroProps) {
   const [isVisible, setIsVisible] = useState(false)
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 200)
     return () => clearTimeout(timer)
-  }, [])
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 60)
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const handleCreate = () => {
@@ -71,15 +64,6 @@ export function Hero({ onCreateMate }: HeroProps) {
       */}
       <div className="hero-canvas-container" aria-hidden="true">
         <VirolaScene />
-      </div>
-
-      {/* 3. Scroll indicator (absolute, always on top) */}
-      <div
-        className={`scroll-indicator ${scrolled ? 'scroll-indicator--hidden' : ''}`}
-        aria-hidden="true"
-      >
-        <span className="scroll-indicator-text">SCROLL</span>
-        <span className="scroll-indicator-line" />
       </div>
     </section>
   )
