@@ -18,7 +18,12 @@ dist-ssr/
 .env
 .env.local
 .env.*.local
+.env.*
+!.env.example
 *.local
+
+# Local Codex skill metadata
+skills-lock.json
 
 # Editor & OS files
 .vscode/*

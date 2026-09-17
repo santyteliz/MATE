@@ -1,32 +1,39 @@
-# React + TypeScript + Vite
+# MateShop
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Landing de bienvenida para el personalizador de MateShop. La experiencia presenta un mate generado con Canvas 2D, interacción sutil con cursor y una transición hacia el flujo de personalización existente.
 
-Currently, two official plugins are available:
+## Requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 20 o superior
+- npm 10 o superior
 
-## React Compiler
+## Desarrollo local
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+La aplicación se abrirá en la URL que indique Vite, normalmente `http://localhost:5173`.
+
+## Scripts
+
+```bash
+npm run dev
+npm run build
+npm run lint
+npm run preview
+```
+
+`npm run build` genera la versión de producción en `dist/`.
+
+## Variables de entorno
+
+Actualmente la aplicación no requiere variables de entorno. Si se agregan en el futuro, se debe partir de `.env.example` y nunca versionar archivos `.env` con valores privados.
+
+## Stack
+
+- React
+- TypeScript
+- Vite
+- Canvas 2D

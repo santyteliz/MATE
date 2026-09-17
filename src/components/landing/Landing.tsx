@@ -9,7 +9,7 @@ interface LandingProps {
 export function Landing({ onCreateMate }: LandingProps) {
   return (
     <div className="landing">
-      <Navbar onCreateMate={onCreateMate} />
+      <Navbar />
       <Hero onCreateMate={onCreateMate} />
     </div>
   )

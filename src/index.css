@@ -1,166 +1,23 @@
-/* ═══════════════════════════════════════════════════════
-   MATESHOP — Global Styles
-   Identity: #758A4F · #160F0D · #52524C · #F1F8F2
-   ═══════════════════════════════════════════════════════ */
-
-/* ── CSS Variables ── */
 :root {
-  /* Brand Colors */
-  --brand-green: #758A4F;
-  --brand-dark: #160F0D;
-  --brand-gray: #52524C;
-  --brand-white: #F1F8F2;
-
-  /* Backgrounds */
-  --bg-primary: #000000;
-  --bg-secondary: #0a0a0a;
-  --bg-elevated: #141414;
-  --surface: rgba(241, 248, 242, 0.04);
-  --surface-hover: rgba(241, 248, 242, 0.07);
-
-  /* Borders */
-  --border: rgba(241, 248, 242, 0.07);
-  --border-hover: rgba(241, 248, 242, 0.14);
-
-  /* Text */
-  --text-primary: #F1F8F2;
-  --text-secondary: rgba(241, 248, 242, 0.65);
-  --text-tertiary: rgba(241, 248, 242, 0.3);
-
-  /* Accent (green, used sparingly) */
-  --accent: #758A4F;
-  --accent-soft: rgba(117, 138, 79, 0.15);
-  --accent-glow: rgba(117, 138, 79, 0.08);
-  --accent-border: rgba(117, 138, 79, 0.25);
-
-  /* Metal tones */
-  --silver: #c8c0b0;
-  --silver-bright: #e0d8c8;
-  --silver-dim: #5a544a;
-
-  /* Glass */
-  --glass-bg: rgba(22, 15, 13, 0.55);
-  --glass-border: rgba(241, 248, 242, 0.08);
-  --glass-blur: 20px;
-  --glass-highlight: rgba(241, 248, 242, 0.1);
-
-  /* Typography — prepared for future brand font replacement */
-  /* Display: Space Grotesk (placeholder for Call Free Room) */
-  /* Body/UI: Inter (placeholder for Helvetica LT Pro / Stack Sans Notch) */
-  --font-display: 'Space Grotesk', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-
-  /* Spacing */
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 16px;
-  --space-lg: 32px;
-  --space-xl: 64px;
-  --space-2xl: 128px;
-
-  /* Motion */
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
-  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-  --duration-fast: 200ms;
-  --duration-normal: 400ms;
-  --duration-slow: 800ms;
-  --duration-intro: 1600ms;
-}
-
-/* ── Reset ── */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  scroll-behavior: smooth;
-}
-
-body {
+  --brand-dark: #160f0d;
+  --brand-gray: #52524c;
+  --brand-white: #f1f8f2;
+  --brand-green: #758a4f;
+  --font-display: 'Call Free Room', 'Arial Black', Arial, sans-serif;
+  --font-body: 'Helvetica LT Pro', Arial, sans-serif;
+  --font-ui: 'Stack Sans Notch', Arial, sans-serif;
   font-family: var(--font-body);
-  color: var(--text-primary);
-  background-color: var(--bg-primary);
-  line-height: 1.5;
-  overflow-x: hidden;
-  min-height: 100dvh;
+  color: var(--brand-dark);
+  background: var(--brand-white);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
 }
 
-#root {
-  min-height: 100dvh;
-  position: relative;
-}
-
-/* ── Typography ── */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--text-primary);
-}
-
-p {
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-a {
-  color: var(--text-primary);
-  text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-smooth);
-}
-
-a:hover {
-  color: var(--brand-white);
-}
-
-/* ── Selection — subtle green tint ── */
-::selection {
-  background: rgba(117, 138, 79, 0.3);
-  color: var(--text-primary);
-}
-
-/* ── Focus ── */
-:focus-visible {
-  outline: 1px solid var(--accent);
-  outline-offset: 2px;
-}
-
-/* ── Scrollbar ── */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--silver-dim);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--silver);
-}
-
-/* ── Reduced Motion ── */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
+*, *::before, *::after { box-sizing: border-box; }
+html { min-width: 320px; min-height: 100%; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { min-width: 320px; min-height: 100dvh; margin: 0; overflow-x: hidden; background: var(--brand-white); }
+button, input, textarea, select { font: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+#root { min-height: 100dvh; }
+::selection { color: var(--brand-dark); background: rgb(117 138 79 / 65%); }
