@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { MateMatterCanvas } from './MateMatterCanvas'
+import { ProductCarousel } from './ProductCarousel'
 import { GlassButton } from './GlassButton'
 
 interface HeroProps {
@@ -14,7 +14,7 @@ export function Hero({ onCreateMate }: HeroProps) {
   const handleCreateMate = () => {
     if (exiting) return
     setExiting(true)
-    window.setTimeout(onCreateMate, 480)
+    window.setTimeout(onCreateMate, 720)
   }
 
   return (
@@ -28,7 +28,7 @@ export function Hero({ onCreateMate }: HeroProps) {
         <p>Elegí los detalles y hacelo tuyo.</p>
         <GlassButton label={exiting ? 'ABRIENDO…' : 'EMPEZAR A PERSONALIZAR'} onClick={handleCreateMate} disabled={exiting} />
       </div>
-      <div className="hero-product" aria-hidden="true"><MateMatterCanvas exiting={exiting} /></div>
+      <div className="hero-product"><ProductCarousel /></div>
       <div data-banner-slot="future" hidden />
     </main>
   )

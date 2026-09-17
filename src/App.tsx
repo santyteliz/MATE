@@ -15,6 +15,8 @@ function App() {
   if (showTransition) {
     return (
       <div className="transition-screen">
+        <span className="transition-screen__plane transition-screen__plane--one" aria-hidden="true" />
+        <span className="transition-screen__plane transition-screen__plane--two" aria-hidden="true" />
         <div className="transition-content">
           <p className="transition-text">Preparando tu experiencia...</p>
           <div className="transition-loader" />
